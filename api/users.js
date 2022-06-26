@@ -3,11 +3,7 @@ const userRouter = Router();
 let arr = [];
 const { createClient } = require('redis');
 const publisher = createClient();
-publisher.connect().then((data)=>{
-    console.log(data,'-------')
-}).catch((err)=>{
-    console.log(err)
-});
+publisher.connect().then().catch();
 
 userRouter.get('/', (req, res) => {
   res.send('Hello World');
